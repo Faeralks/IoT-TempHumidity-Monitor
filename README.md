@@ -4,6 +4,7 @@ This is the project presented for the introduction to IoT course.
 ## Overview
 
 **Name**: Fabian Dacic
+
 **Student credentials**: fd222fr
 
 `IoT-TempHumidity-Monitor` is an IoT system built using MicroPython for Raspberry Pi Pico W, designed to monitor and evaluate environmental conditions. The system reads temperature and humidity data from a DHT11 sensor, evaluates the data, and provides immediate visual feedback through LEDs. The collected data is also sent to Adafruit IO for visualization and tracking.
