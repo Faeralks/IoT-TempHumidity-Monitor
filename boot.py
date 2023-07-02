@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 from secrets import values
 import led
 
-def wifi_connect(ssid, password):
+def connect_to_network(ssid, password):
     wlan = network.WLAN(network.STA_IF)
     ip = None
     if not wlan.isconnected():
@@ -15,7 +15,7 @@ def wifi_connect(ssid, password):
         ip = wlan.ifconfig()[0]
     return ip
 
-def http_get(url):
+def get_request(url):
     url_components = urlparse(url)
     host = url_components.netloc
     path = url_components.path if url_components.path else '/'
@@ -36,14 +36,14 @@ def http_get(url):
 def main():
     led.test_led()
     try:
-        wifi_connect(values['ssid'], values['pw'])
+        connect_to_network(values['ssid'], values['password'])
     except KeyboardInterrupt:
         print("Keyboard interrupt")
     except Exception as err:
         print(f"Connection exception: {err}")
 
     try:
-        http_get('http://example.com')
+        get_request('http://example.com')
     except Exception as err:
         print(f"HTTP request exception: {err}")
 

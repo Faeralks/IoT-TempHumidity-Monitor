@@ -13,7 +13,7 @@ AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())
 # Create a global MQTTClient object
 mqtt_client = None
 
-def connect_AIO():
+def connect_to_ada():
     global mqtt_client
     if mqtt_client is None:
         try:
@@ -26,12 +26,12 @@ def send_data(feed_key, value):
     global mqtt_client
     try:
         if mqtt_client is None:
-            connect_AIO()
+            connect_to_ada()
         mqtt_client.publish(feed_key, str(value))
     except Exception as e:
         print("Failed to send data to Adafruit IO:", e)
         mqtt_client = None  # Reset MQTT client to force reconnection in the next send_data call
-        connect_AIO()  # Attempt to reconnect
+        connect_to_ada()  # Attempt to reconnect
         try:
             # Try to send the data again after reconnecting
             mqtt_client.publish(feed_key, str(value))
