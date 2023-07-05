@@ -5,13 +5,10 @@ import aio
 import led
 from secrets import values
 
-# Initialize DHT11 sensor
+# Initialize variables regarding sensors, feed keys and transmission intervals
 dh = dht.DHT11(machine.Pin(27, machine.Pin.OUT))
-
 temperature_feed_key = values['temp_feed_key']
 humidity_feed_key = values['humd_feed_key']
-
-# Fetch the interval from credentials or default to 15 seconds
 transmission_interval = 15 
 last_transmission = 0
 
@@ -32,25 +29,18 @@ def main():
             dh.measure()
             temperature = dh.temperature()
             humidity = dh.humidity()
-
             # Update LED status based on temperature and humidity
             led.set_leds_based_on_temperature_and_humidity(temperature, humidity)
-
             # Get the currently active LED
             active_led = led.get_active_led()
-
             # Indicate publishing by toggling the active LED
             toggle_led(active_led)
-
             # Send data to Adafruit IO
             aio.send_data(temperature_feed_key, temperature)
             aio.send_data(humidity_feed_key, humidity)
-
             # Toggle the active LED back
             toggle_led(active_led)
-
             last_transmission = current_time
-
         utime.sleep(1)  # sleep for 1 second before checking again
     
 # Main program
