@@ -6,7 +6,7 @@ import led
 from secrets import values
 
 # Initialize variables regarding sensors, feed keys and transmission intervals
-dh = dht.DHT11(machine.Pin(27, machine.Pin.OUT))
+dht11_sensor = dht.DHT11(machine.Pin(27, machine.Pin.OUT))
 temperature_feed_key = values['temp_feed_key']
 humidity_feed_key = values['humd_feed_key']
 transmission_interval = 15 
@@ -26,9 +26,9 @@ def main():
     while True:
         current_time = utime.time()
         if (current_time - last_transmission) >= transmission_interval:
-            dh.measure()
-            temperature = dh.temperature()
-            humidity = dh.humidity()
+            dht11_sensor.measure()
+            temperature = dht11_sensor.temperature()
+            humidity = dht11_sensor.humidity()
             # Update LED status based on temperature and humidity
             led.set_leds_based_on_temperature_and_humidity(temperature, humidity)
             # Get the currently active LED

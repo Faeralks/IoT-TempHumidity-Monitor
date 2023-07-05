@@ -3,8 +3,8 @@ import machine
 from mqtt import MQTTClient
 from secrets import values
 
-AIO_SERVER = "io.adafruit.com"
-AIO_PORT = 1883
+AIO_PORT = int(values['AIO_port'])
+AIO_SERVER = values['AIO_server']
 AIO_USERNAME = values['AIO_username']
 AIO_KEY = values['AIO_key']
 AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())

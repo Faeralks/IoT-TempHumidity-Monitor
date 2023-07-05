@@ -27,7 +27,7 @@ def get_request(url):
         s.send(bytes(request, 'utf8'))
         time.sleep(1)
         while True:
-            data = s.recv(1000)
+            data = s.recv(1024)
             if data:
                 print(str(data, 'utf8'), end='')
             else:
