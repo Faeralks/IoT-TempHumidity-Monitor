@@ -19,17 +19,17 @@ The objective of this project was to create an environment monitoring system tha
 
 ### List of Material and Specifications
 
-| No. | Name | Store Identification | Quantity | Approximate Price per Piece (SEK) |
+Name | Store Identification | Quantity | Approximate Price per Piece (SEK) | Image |
 |---|---|---|---|---|
-| 1 | Raspberry Pi Pico WH | 41019114 Raspberry Pi Pico WH | 1 | 109 |
-| 2 | Breadboard 840 connections | 10160840 Kopplingsdäck 840 anslutningar | 1 | 69 |
-| 3 | USB Cable A Male – Micro B 5P Male 1.8m | 41003290 USB-kabel A-hane – micro B 5p hane 1.8m | 1 | 39 |
-| 4 | Jumper Cable 30cm Male/Male | 41012684 Labbsladd 30cm hane/hane | 11 | 49 |
-| 5 | Carbon Film Resistor 0.25W 330 Ohm | 40810233 Motstånd kolfilm 0.25W 330ohm (330R) | 3 | 1 |
-| 6 | Red LED 5mm Diffuse 1500mcd | 40307020 LED 5mm röd diffus 1500mcd | 1 | 5 |
-| 7 | Yellow LED 5mm Diffuse 1500mcd | 40307021 LED 5mm gul diffus 1500mcd | 1 | 5 |
-| 8 | Green LED 5mm Diffuse 80mcd | 40307023 LED 5mm grön diffus 80mcd | 1 | 5 |
-| 9 | Digital Temperature and Humidity Sensor DHT11 | 41015728 Digital temperatur- och fuktsensor DHT11 | 1 | 49 |
+| [Raspberry Pi Pico WH](https://www.electrokit.com/produkt/raspberry-pi-pico-wh/) | 41019114 Raspberry Pi Pico WH | 1 | 109 | <img src="./img/PICO-WH-HERO.jpg" alt="Raspberry Pi Pico WH" width="200"/> |
+| [Breadboard 840 connections](https://www.electrokit.com/produkt/kopplingsdack-840-anslutningar/) | 10160840 Kopplingsdäck 840 anslutningar | 1 | 69 | <img src="./img/breadboard.jpg" alt="Breadboard 840 connections" width="200"/> |
+| [USB Cable A Male – Micro B 5P Male 1.8m](https://www.electrokit.com/produkt/usb-kabel-a-hane-micro-b-5p-hane-1-8m/) | 41003290 USB-kabel A-hane – micro B 5p hane 1.8m | 1 | 39 | <img src="./img/cable.jpg" alt="USB Cable A Male – Micro B 5P Male 1.8m" width="200"/> |
+| [Jumper Cable 30cm Male/Male](https://www.electrokit.com/produkt/labbsladd-40-pin-30cm-hane-hane/) | 41012684 Labbsladd 30cm hane/hane | 11 | 49 | <img src="./img/jumper_cable_mm.jpg" alt="Jumper Cable 30cm Male/Male" width="200"/> |
+| [Carbon Film Resistor 0.25W 330 Ohm](https://www.electrokit.com/en/product/resistor-carbon-film-0-25w-330ohm-330r/) | 40810233 Motstånd kolfilm 0.25W 330ohm (330R) | 3 | 1 | <img src="./img/resistor.png" alt="Carbon Film Resistor 0.25W 330 Ohm" width="200"/> |
+| [Red LED 5mm Diffuse 1500mcd](https://www.electrokit.com/produkt/led-5mm-rod-diffus-1500mcd/) | 40307020 LED 5mm röd diffus 1500mcd | 1 | 5 | <img src="./img/5mm-röd-diffus.jpg" alt="Red LED 5mm Diffuse 1500mcd" width="200"/> |
+| [Yellow LED 5mm Diffuse 1500mcd](https://www.electrokit.com/produkt/led-5mm-gul-diffus-1500mcd/) | 40307021 LED 5mm gul diffus 1500mcd | 1 | 5 | <img src="./img/5mm-gul-diffus.jpg" alt="Yellow LED 5mm Diffuse 1500mcd" width="200"/> |
+| [Green LED 5mm Diffuse 80mcd](https://www.electrokit.com/produkt/led-5mm-gron-diffus-80mcd/) | 40307023 LED 5mm grön diffus 80mcd | 1 | 5 | <img src="./img/5mm-grön-diffus.jpg" alt="Green LED 5mm Diffuse 80mcd" width="200"/> |
+| [Digital Temperature and Humidity Sensor DHT11](https://www.electrokit.com/produkt/digital-temperatur-och-fuktsensor-dht11/) | 41015728 Digital temperatur- och fuktsensor DHT11 | 1 | 49 | <img src="./img/DHT11.jpg" alt="Digital Temperature and Humidity Sensor DHT11" width="200"/> |
 
 All of these components were bought from Electrokit as a part of the Starter Kit for the IoT course which cost 399SEK.
 - **Raspberry Pi Pico WH**: This is the main microcontroller used in the project. It features an ARM Cortex-M0+ CPU, 256kB of RAM, 30 GPIO pins, 2MB on-board QSPI Flash, and has a CYW43439 wireless chip that supports IEEE 802.11 b/g/n wireless LAN.
@@ -41,31 +41,6 @@ All of these components were bought from Electrokit as a part of the Starter Kit
 - **Yellow LED**: Used to visually indicate middle-ground environmental conditions based on the sensor data in this specific context.
 - **Green LED**: A Green LED that's used to visually indicate safe environmental conditions based on the sensor data in this specific context.
 - **Digital Temperature and Humidity Sensor (DHT11)**: This sensor measures both temperature and humidity, and it provides digital output accordingly. 
-
-<div align="center">
-  <div style="display: flex; justify-content: space-between;">
-    <figure style="display: flex; flex-direction: column; align-items: center;">
-      <img src="./img/5mm-röd-diffus.jpg" alt="Red LED used in the project" width="260"/>
-      <figcaption>Figure 1.0: Red LED</figcaption>
-    </figure>
-    <figure style="display: flex; flex-direction: column; align-items: center;">
-      <img src="./img/5mm-gul-diffus.jpg" alt="Yellow LED used in the project" width="260"/>
-      <figcaption>Figure 1.1: Yellow LED</figcaption>
-    </figure>
-    <figure style="display: flex; flex-direction: column; align-items: center;">
-      <img src="./img/5mm-grön-diffus.jpg" alt="Green LED used in the project" width="260"/>
-      <figcaption>Figure 1.2: Green LED</figcaption>
-    </figure>
-  </div>
-  <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="./img/DHT11.jpg" alt="DHT11 used in the project" width="800"/>
-    <figcaption>Figure 1.3: DHT11 Sensor</figcaption>
-  </figure>
-  <figure style="display: flex; flex-direction: column; align-items: center;">
-    <img src="./img/PICO-WH-HERO.jpg" alt="Raspberry Pi Pico used in the project" width="800"/>
-    <figcaption>Figure 1.4: Raspberry Pi Pico</figcaption>
-  </figure>
-</div>
 
 ## Computer Setup
 
